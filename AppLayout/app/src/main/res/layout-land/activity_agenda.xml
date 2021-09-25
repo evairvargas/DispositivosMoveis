@@ -33,6 +33,11 @@
             android:textColor="#fff"
             android:textAlignment="center"/>
 
+        <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,6 +49,9 @@
             android:layout_height="wrap_content"
             android:hint="@string/txtHintNome"
             style="@style/controles"/> <!-- Aqui estamos inserindo o estilo 'controles' num elemento que o usuário interage; -->
+
+        </LinearLayout>
+
 
             <LinearLayout
 
@@ -62,6 +70,11 @@
                         style="@style/controles"/> <!-- Aqui estamos inserindo o estilo 'controles' num elemento que o usuário interage; -->
 
             </LinearLayout>
+
+        <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
@@ -94,6 +107,13 @@
 
         </RadioGroup>
 
+        </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -103,7 +123,10 @@
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/estados"/>
+            android:entries="@array/estados"
+            android:minHeight="50dp"/>
+
+    </LinearLayout>
 
         <CheckBox
             android:id="@+id/checkBox"
@@ -179,3 +202,14 @@
     Alteramos todos os textos, inserindo o array criado no arquivo de strings nas linhas 39, 44, 53, 58, 65, 76, 86, 93, 98, 104 e 110; -->
 
 <!--Nas linhas 40, 55, 68 e 97, adicionamos o comando style="@style/Labels" no qual vai buscar o estilo criado na aba 'themes';-->
+
+<!--Para adaptar a tela quando o usuário virar o celular e os elementos não saírem do lugar;
+    Vamos na pasta layout > botao direito > open in > explorer;
+    Copiar e colar no mesmo local, renomeando para "layout-land" pois o android irá buscar por esse nome/pasta;
+    Voltando para o AndroidStudio, abrimos a pasta do layout nos diretórios da esquerda, e notamos que criou-se 2 pastas de agenda e main;
+    Abrimos o activity_agenda.xml(land) para alterar o layout conforme a orientação do celular;
+    Para colocar 2 elementos um ao lado do outro, devemos verificar onde estes elementos estão, e se estão dentro de algum LinearLayout com orientação definida;
+    Copiamos o LinearLayout das linhas 56-59 (no arquivo activity_agenda.xml(land), que correspondem à orientação do telefone e colamos antes do textView do nome (linha 41);
+    Quando nao definimos a orientação (que é este caso), por padrão, a mesma fica na horizontal;
+    Fizemos o mesmo com o turno, abrindo um LinearLayout na linha 74 e fechando na linha 110, depois de fechar o RadioGroup;
+    O mesmo vale pra estado: abrimos na linha 112 e fechamos na linha 128; -->

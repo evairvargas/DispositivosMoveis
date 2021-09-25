@@ -13,4 +13,55 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+
+
+    <style name="Labels" parent="Theme.AppLayout">
+        <item name="android:textSize">25dp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:background">#000</item>
+        <item name="android:layout_marginVertical">10dp</item> <!-- Aqui, defini uma margem vertical de 10dp, tanto pro topo como pra base; -->
+        <item name="android:padding">10dp</item> <!-- aqui, defini um padding, que é basicamente a margem interna, tamnbém com 10dp; -->
+    </style>
+
+    <style name="controles" parent="Theme.AppLayout">
+        <item name="android:textSize">30dp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textColorHint">#ddd</item> <!-- adicionei essa propriedade para melhorar a visualização do hint do app -->
+        <item name="android:background">#00f</item>
+        <item name="android:layout_marginVertical">10dp</item> <!-- Aqui, defini uma margem vertical de 10dp, tanto pro topo como pra base; -->
+        <item name="android:padding">10dp</item> <!-- aqui, defini um padding, que é basicamente a margem interna, tamnbém com 10dp; -->
+    </style>
+
 </resources>
+
+
+<!--Nesta aba chamada 'themes.xml', podemos manipular estilos;
+    Abrimos, dentro da tag resources, uma nova tag 'style' na linha 19.
+    Vamos criar este estilo da l19 para os elementos de texto que o usuário não manipula;
+    Os elementos que ele não vai manipular, será chamado 'labels';
+    Os estilos precisam de um parent, que serve para definir qual tema será buscado quando as propriedades não tiverem um tema definido;
+    No caso da l19, usamos o "Theme.AppLayout" que é o tema padrão (consta na linha 3) da aplicaçãoe já vem com algumas definições;
+
+    Na linha 20, definimos o primeiro item no qual queremos que seja aplicado este tema 'labels';
+    Colocamos que, a propriedade que queremos definir é a "textColor" com valor #fff (a fonte ficará branca) e na linha 22 o background com valor #000 (fundo ficará preto);
+    Na linha 20, colocamos que o tamanho do texto será de 25dp;
+
+    RESUMO: CRIEI UM ESTILO, CHAMEI ELE DE "LABELS" E DEFINI UM PARENT PRA ELE (QUE JÁ EXISTE NA LINHA 3) E DEFINI PROPRIEDADES NAS LINHAS 21 A 23;
+
+    Volto pra tela da activity_agenda, e em todos os elementos que o usuário não irá mexer, chamo o style criado;
+    Neste caso, vamos nas linhas 40, 55, 68 e 97, adicionamos o comando style="@style/Labels" no qual vai buscar o estilo criado na aba 'themes';
+
+    Na linha 27, criei o estilo 'controles' para aplicar nos elementos que o usuário poderá interagir;
+
+    Para adaptar a tela quando o usuário virar o celular e os elementos não saírem do lugar;
+    Vamos na pasta layout > botao direito > open in > explorer;
+    Copiar e colar no mesmo local, renomeando para "layout-land" pois o android irá buscar por esse nome/pasta;
+    Voltando para o AndroidStudio, abrimos a pasta do layout nos diretórios da esquerda, e notamos que criou-se 2 pastas de agenda e main;
+    Abrimos o activity_agenda.xml(land) para alterar o layout conforme a orientação do celular;
+    Para colocar 2 elementos um ao lado do outro, devemos verificar onde estes elementos estão, e se estão dentro de algum LinearLayout com orientação definida;
+    Copiamos o LinearLayout das linhas 56-59 (no arquivo activity_agenda.xml(land), que correspondem à orientação do telefone e colamos antes do textView do nome (linha 41);
+    Quando nao definimos a orientação (que é este caso), por padrão, a mesma fica na horizontal;
+
+
+-->
