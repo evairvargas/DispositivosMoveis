@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">AppLayout</string>
+
+
+    <string-array name="estados">
+        <item>Select</item>
+        <item>RS</item>
+        <item>SC</item>
+        <item>PR</item>
+    </string-array>
+
+    <string name="txtNome">Name: </string>
+    <string name="txtHintNome">Enter your name... </string>
+    <string name="txtFone">Phone: </string>
+    <string name="txtHintFone">Enter your phone... </string>
+    <string name="txtTurno">Shift: </string>
+    <string name="txtManha">Morning</string>
+    <string name="txtNoite">Night</string>
+    <string name="txtEstado">State: </string>
+    <string name="txtAceitaEmail">Accept to receive email</string>
+    <string name="txtSalvar">Save</string>
+
+</resources>
+
+<!--Dentro deste arquivo, vamos criar variáveis que receberão um valor;
+    Este valor é o texto que irá aparecer na tela para o usuário;
+    Estes valores serão no idioma 'default', que eu quero que seja o padrão da minha aplicação
+    Se o usuário selecionar um idioma que não tem especificado dentro do app, buscará neste arquivo de strings;
+    NESTE ARQUIVO, COLOCAMOS OS VALORES NO IDIOMA QUE EU QUERO QUE SEJA DEFAULT;
+    ou seja, se não existir um arquivo de string pro idioma que o usuário selecionar, o app vai buscar no idioma definido aqui; -->
+
+<!-- Vamos criar uma string pra cada item que tenha texto no activity agenda e um string array para o elemento spinner (combo box, select...);
+     AQUI, TODAS AS TAGS SAO EM LETRA MINUSCULA, OS MAIUSCULOS SAO OS ELEMENTOS DE TELA
+     Criamos o string-array e chamamos de 'estados', na linha 4 para poder fazer a relação lá na aba do xml -->
+
+<!-- Na linha 12, criamos uma nova string chamada 'txtNome' e o seu conteúdo é "Name: "
+     Indo na tela do xml, dentro do TextView do nome e, ao invés de escrever "nome", eu busco o @string/txtNome"
+     e com isso irá aparecer o conteúdo da string em default;
+     Fizemos o mesmo com o restante das linhas, entre 13-21, inserindo todos os textos presentes na tela/arquivo xml;
+
+     Posso nomear a string no idioma que eu quiser,as coloquei o conteúdo em inglês;
+     Qualquer idioma que o usuário selecionar mas que nao tenha string pra esse idioma, vai buscar no idioma DESTE arquivo (no caso, inglês);
+     Na pasta "values", clicar com o botão direito e buscar "Open In" que vai abrir a pasta onde está salvo este arquivo.
+     Copiar a pasta "values" e colar ali mesmo, trocar o nome da pasta para "values-pt-rBR"; para confirmar, deverá aparecer uma bandeira do BR neste arquivo dentro do androidstudio; -->

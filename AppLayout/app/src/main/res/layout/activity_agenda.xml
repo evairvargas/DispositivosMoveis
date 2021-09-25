@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".AgendaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="#ccc">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AppAgenda"
+            android:textSize="30dp"
+            android:background="#00f"
+            android:textColor="#fff"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aplicativo"
+            android:textSize="30dp"
+            android:background="#00f"
+            android:textColor="#fff"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtNome"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/txtHintNome"/>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txtFone"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txtHintFone"/>
+
+            </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtTurno"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtManha"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtNoite"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtEstado"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/estados"/>
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txtAceitaEmail" />
+        
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/txtSalvar"/>
+
+
+    </LinearLayout>
+
+</ScrollView>
+
+<!--troquei o "constraint layout" por scrollview;
+     adicionei um linear  layout com altura "wrap" (android:layout_height="wrap_content")
+     e orientação vertical (android:orientation="vertical");
+     adicionei um textview pra verificar o texto sobre o linear layout;
+     O uso do 'linearlayout" exige que seja aberto e fechado SEMPRE, o 'textview' não precisa-->
+
+<!--Na linha "android:textSize="30dp"" defini o tamanho do texto que inseri no "android:text";
+    Na linha "android:background="#00f" defini o fundo da área onde o texto aparece;
+    Na linha "android:textColor="#fff" defini a cor do texto, que neste caso é branco;
+    Por fim, selecionei todas as linhas do meu "TextView" (da linha 16 até 22) e dei Ctrl + D para replicar
+
+    Neste segundo bloco de textview, troquei a linha "android:layout_width=""" que se refere à largura;
+    Antes este campo estava como "wrap_content", que estaria envelopando/preenchendo conforme o texto;
+    No bloco 2, coloquei "match_parent" para preencher toda a linha onde haverá texto, mesmo sem texto em tudo;
+    Coloquei na linha 23 um "android:layout_marginBottom" com o valor de 10dp para distanciar os dois
+    Na linha 14, dei um "padding" de 10dp para dar uma borda/espaço/molde no textView;
+
+    No bloco 1 de textview, ele tá com a largura em 'wrap_content', significa que não conseguimos mexer no texto
+    para centralizar ele, pois o elemento está exatamente com o mesmo tamanho do texto;
+    Neste caso, usamos o "android:layout_gravity="center_horizontal" (linha 25) para centralizar o elemento inteiro;
+    No bloco 2, a largura está 'match_parent' e podemos mexer apenas o texto,
+    já que o elemento está cobrindo toda a largura;
+    Usamos o 'android:textAlignment="center" para mover apenas o texto;
+
+    Na linha 43 e 53, usamos o comando "hint", que permite inserir um texto 'fantasma', ou seja,
+    ele some depois que o usuário preencher o campo vazio com uma frase de orientação
+
+    No TextView do nome, precisamos de um bom espaço pra digitar, mas pro telefone não;
+    Com isso, colocamos o "hint" do telefone na mesma linha de onde será inserido o telefone;
+    Para isso, criamos um LinearLayout e dentro dele, colocamos o "textview" e o "edittext" do telefone;
+    Ele começa na linha 46 e termina na linha 60, dentro dele está a estrutura do telefone;
+
+    Esse 'linearlayout' está dentro do primeiro, cuja orientação é vertical (linha 13);
+    Como por padrao o 'linearlayout' é horizontal, não definimos como horizontal para este outro;
+    O 'textview'  precisou ser definido como 'wrap' para não ocupar o espaço inteiro da linha;
+    já o 'edittext' pode ocupar tudo, sem problemas;
+
+    Abrimos um radiogroup entre as linhas 67 e 88 pra adicionar 2 radio button entre as linhas 73 e 86;
+    colocamos com alinhamento horizontal na linha 70 e um espaço entre eles na linha;
+    Na linha 78 colocamos um "space" para jogar um botão pra cada lado da tela;
+    RadioButton precisa estar dentro de um RadioGroup, senao o usuário poderia marcar ambos e não teria como desmarcar -->
+
+<!--Entre as linhas 99-103 colocamos um checkbox;
+    Entre as linhas 105-109 colocamos um button para salvar;
+    linha 106 é a largura e 107 é altura, ambos como 'wrap' pois é o espaço que ele precisa pra existir;
+    se tivesse usado match parent, seria o espaço que ele teria disponível; -->
+
+<!--Na linha 95 criamos um bloco "Spinner" pra fazer a ligação com o arquivo string;
+    Puxamos dentro deste bloco, um android:entries="@array/estados" pra efetivamente trazer a array dos estados pra esa tela;
+
+    Na linha 39, dentro do 'TextView' do nome, puxamos o string-array criado no arquivo de strings;
+    esse string-array irá alterar o idioma do texto conforme o idioma que for definido no arquivo de strings for alterado
+    Alteramos todos os textos, inserindo o array criado no arquivo de strings nas linhas 39, 44, 53, 58, 65, 76, 86, 93, 98, 104 e 110; -->
