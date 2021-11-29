@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1010788723596",
+    "firebase_url": "https://appn1movie-default-rtdb.firebaseio.com",
+    "project_id": "appn1movie",
+    "storage_bucket": "appn1movie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010788723596:android:7984457cfd9c658d1584a9",
+        "android_client_info": {
+          "package_name": "com.vargas.appn1movie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1010788723596-vmq6vu49bktldvlj9cviav2u1e2vcocr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcACBLK3rO6D4TB0kjdHPtFnYI4imGqqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1010788723596-vmq6vu49bktldvlj9cviav2u1e2vcocr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

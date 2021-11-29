@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.vargas.appn1movie.MainActivity">
+    <item
+        android:id="@+id/menuAddFilme"
+        android:orderInCategory="100"
+        android:title="Adicionar Filme"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menuSair"
+        android:orderInCategory="100"
+        android:icon="@android:drawable/ic_lock_power_off"
+        android:title="Sair"
+        app:showAsAction="never" />
+</menu>

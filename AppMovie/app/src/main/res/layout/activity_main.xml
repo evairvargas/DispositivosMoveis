@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.AppMovie.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.AppMovie.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#f00"
+        android:tint="#00f"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!--
+    na linha 34, usamos "android:backgroundTint="#f00"" pra definir a cor do fundo do botão. neste caso, escolhi vermelho
+    na linha 35, usamos "android:tint="#00f"" pra definir a cor de fundo do elemento que tem DENTRO da bolinha. escolhi azul pra ter contraste
+    Como trata-se de um 'floating', ele ficará flutuando na tela. com isso, podemos alterar o local onde ele fica;
+    Na linha "android:layout_gravity=" (LINHA 31) permite que se altere o local do botão;
+    Na linha 34, app:srcCompat="@android:drawable/ic_input_add" é onde definimos o tipo de botão; -->
+
+    <!-- activity_main é o contorno da primeira tela, onde criamos o flowaction button e editamos;
+    o conteúdo da tela fica no content_main, onde fizemos a criação e um listview, chamado de lvMovies;
+    na tela de activity_formulario, criamos 3 campos: editText para nome, um spinner para categoria e um botão para salvar;
+    Na activity_main, criamos o método carregarFilmes e chamamos ele tanto dentro do onCreate e carregamos os filmes numa lista fake
+    Vou comentar ela depois, porque criarei um banco de dados pro app;
+    Criei uma classe produto em java, com id, nome e categoria, com seus respectivos métodos construtores;
+    montamos um método 'toString' pra retornar nome do filme e categoria; -->
+
+
+                                        <!-- AULA DIA 09/09 -->
+
+    <!--
+    AS APLICAÇÕES DESTE BLOCO DE COMENTARIOS FOI EFETUADA NO banco.java; ACESSAR INDO EM MENU DA ESQ > java > com.vargas.appmovie > banco;
+    Criei uma classe java no meu pacote e chamei de 'banco';
+    Mas ela vai herdar de outra classe, com isso coloquei "extends SQLiteOpenHelper";
+    ela nos obriga a acrescentar 3 métodos: construtor, onCreate e onUpdate;
+    Quando precisar atualizar o app e precisar fazer uma atualização na versão do banco, o próprio android vai chamar o método onUpgrade,
+    dentro dela vou programar o que deverá ser feito pra essa atualização ocorrer;
+    Criamos 2 constantes pra deixar claro e usar dentro da classe: NOME_BANCO e VERSAO nas linhas 8 e 9;
+    Criamos o método construtor com o mesmo nome da classe na linha 11; Com isso, definimos se pode receber parâmetros ou não;
+    O método construtor da classe banco, precisa invocar o método construtor da classe SQLiteOpenHelper;
+    Para chamar/invocar o método da classe SQLiteOpenHelper (super-classe), usamos o método 'super' dentro da subclasse public Banco();
+    Antes, preciso passar um contexto na classe 'banco', pois a classe 'banco' não é uma tela; Vamos receber ela por parâmetro;
+    Declaramos o parâmatro do tipo 'context' dentro da classe public Banco (linha 11)
+    para poder chamar os parãmetros dentro do método 'super' e invocar o método construtor da classe SQLiteOpenHelper;
+    Os parâmetros são 4: context, NOME_BANCO, null, VERSAO; todos dentro da linha "super( );"
+        1 context - referência da tela que estará sendo usada;
+        2 NOME_BANCO - é o nome do banco que vai ser usado;
+        3 null - é o cursor factory, ou a forma como os dados serão retornados, definimos de forma nula;
+        4 VERSAO - o último parâmtro definido é a versão do banco, já definido no "private static final int VERSAO = 1;";
+
+    botão direito > generate > implement methotds > vai trazer todos os métodos abstratos da superclasse;
+    Com isso, a classe não apresentará erro pois terá implantado os dois método
+    Conforme informado na linha 31, já temos os 3 métodos criados na classe: construtor, onCreate e onUpdate;
+    para usar o banco de dados, precisa criar a estrutura dele;
+    Dentro do método public void onCreate, inserimos um comando sqLiteDatabase.execSQL que é de sql, para criar e definir os parâmetros da tabela;
+    Esta tabela se chama 'filmes' e tem um Id do tipo inteiro, não nulo, chave primária e autoincrementavel;
+    também tem o nome do filme, do tipo texto e não pode ser nulo; por fim, tem uma categoria que pode ser nula e é do tipo texto;
+
+    No método public void onUpdate, temos no 1° parâmetro o nome do banco do app, no 2° parâmetro é a versão antiga e o 3° parâmetro é a versão nova;
+    Dentro do método onUpdate, a gente diz pro android o que foi atualizado no app, pra que ele invoque e possa apresentar na tela do usuário;
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
