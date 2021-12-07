@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -16,6 +17,8 @@ import android.widget.EditText;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
+
+    private SQLiteDatabase bancoDados;
 
     EditText nome, altura, peso;
     Button btnCalcular;
@@ -40,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
     public void resultadoIMC(){
 
         if(TextUtils.isEmpty(nome.getText().toString())){
