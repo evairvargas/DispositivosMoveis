@@ -8,13 +8,24 @@
 
     <TextView
         android:id="@+id/txtResultado"
-        android:layout_width="139dp"
-        android:layout_height="26dp"
+        android:layout_width="276dp"
+        android:layout_height="322dp"
+        android:layout_marginTop="80dp"
         android:text="TextView"
+        android:textColor="#E30606"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="325dp"
+        android:layout_height="167dp"
+        android:layout_marginBottom="76dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/imc_grafico" />
 </androidx.constraintlayout.widget.ConstraintLayout>
