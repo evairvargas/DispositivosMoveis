@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Beba Agua</string> <!-- String do nome do app -->
+    <string name="hint_peso">Digite seu peso (kg)</string> <!-- hint pra pedir o peso do user -->
+    <string name="hint_idade">Digite sua idade</string> <!-- hint pra pedir idade do user -->
+    <string name="text_btnCalcular">Qual a quantidade de água você deve beber?</string> <!-- String que aparece no botao de calcular (resposta do calculo vem logo abaixo com a resposta da pergunta) -->
+    <string name="txtLembrete">LEMBRETE</string> <!-- String do botao lembrete, pra nao digitar direto no elemento -->
+    <string name="txtAlarme">ALARME</string> <!--String do botao de alarme, pra nao digitar direto no elemento -->
+    <string name="txtHora">00</string> <!--String criado pra hora-->
+    <string name="txtPontos">:</string> <!--String criado pros dois pontos -->
+    <string name="txtMinutos">00</string> <!--String para os minutos -->
+    <string name="alertaRedefinir">Redefinir Dados</string> <!--título do alerta -->
+    <string name="alertaText">Deseja limpar os dados informados?</string> <!--texto do alerta para confirmar se o usuario quiser zerar os dados-->
+    <string name="txtMessageAlarm">Chegou a hora de beber água!</string> <!--texto para informar a hora quando o horario do alarme tocar-->
+</resources>

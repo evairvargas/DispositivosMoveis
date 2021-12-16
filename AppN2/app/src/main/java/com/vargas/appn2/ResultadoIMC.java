@@ -3,6 +3,7 @@ package com.vargas.appn2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.icu.text.NumberFormat;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ public class ResultadoIMC extends AppCompatActivity {
     TextView resultado;
     String strNome, strResult;
     Float floatAltura, floatPeso, floatResultado;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,8 @@ public class ResultadoIMC extends AppCompatActivity {
 
         strResult = "Olá, " + strNome + "!";
         strResult = strResult + "\n" + "O resultado do seu IMC é " + floatResultado.toString();
+
+
 
                 if (floatResultado < 17) {
                     strResult = strResult + "\n" + "Você está muito abaixo do peso.";

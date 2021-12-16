@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <gradient
+        android:startColor="@android:color/holo_blue_dark"
+        android:centerColor="@android:color/holo_blue_light"
+        android:endColor="@android:color/holo_blue_bright"
+        android:angle="360"
+        />
+
+</shape>
+
+    <!--
+
+    Aqui é o arquivo para o design do botao que o usuário vai clicar para ver o resultado do calculo
+    Na linha 3, defini que trata-se de um shape retangular
+    Nas linhas 6 ate 8 defini as cores do botao e como elas serao distribuidas num efeito gradiente
+     -->

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Este bloco serve pra gente nao ver a barra de rolagem no canto direito da tela-->
+<!--fillViewport permite que o scrollView estenda sua altura igual à altura total da altura da tela do
+    dispositivos nos casos em que o filho da visualização de rolagem tem menos altura.-->
+<androidx.core.widget.NestedScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--na linha abaixo, criei uma view onde passei o container_header através do id  e defini as constraints às extremidades-->
+    <View
+        android:id="@+id/container_header"
+        android:layout_width="408dp"
+        android:layout_height="112dp"
+        android:background="@drawable/container_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!-- Bloco abaixo com ImageView para inserir aquela foto no topo/centro do app, que eu salvei na pasta res > drawable -->
+<!-- A imagem tem constraint com a margem esquerda e o topo do container header e seus height/width foram no olho kkk-->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="385dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/afogado"
+        app:layout_constraintStart_toStartOf="@id/container_header"
+        app:layout_constraintTop_toTopOf="@id/container_header" />
+
+<!-- defini outra imagem, desta vez pra aquela flecha que vai ser usada para resetar os dados de peso e idade informados-->
+
+    <ImageView
+        android:id="@+id/ic_redefinir"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_refresh"
+        app:layout_constraintBottom_toBottomOf="@+id/container_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"/>
+
+<!-- no arquivo strings.xml estão todos os textos que sao usados no app, entao lá estao as definições dos hints -->
+<!-- android:inputType="numberDecimal" só aceita numero decimal-->
+<!-- android:inputType="number" só aceita numero (vai subir um teclado numerico)-->
+<!-- android:maxLength="6" máximo de 6 caracteres no campo de peso-->
+
+    <EditText
+        android:id="@+id/edit_peso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_peso"
+        android:textColorHint="@android:color/holo_blue_dark"
+        android:padding="5dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:inputType="numberDecimal"
+        android:maxLength="6"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/container_header"
+        app:layout_constraintStart_toStartOf="parent"
+    />
+
+<!-- EditText para a caixinha da idade, praticamente mesmos parametros do bloco acima-->
+<!-- vai aceitar apenas 2 digitos no maximo, e vai receber apenas dados numericos também-->
+
+    <EditText
+        android:id="@+id/edit_idade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_idade"
+        android:textColorHint="@android:color/holo_blue_dark"
+        android:padding="5dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:inputType="number"
+        android:maxLength="2"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+
+        app:layout_constraintTop_toBottomOf="@id/container_header"
+        app:layout_constraintStart_toEndOf="@+id/edit_peso"
+        app:layout_constraintEnd_toEndOf="parent"
+    />
+
+<!-- usei um compat button pois vou colocar um efeito gradiente-->
+<!-- ficou alinhado entre os campos que vai receber os dados do usuario e abaixo do resultado do calculo-->
+<!-- o android:text foi definido através de uma string no arquivo string.xml-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCalcular"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_degrade_button"
+        android:padding="15dp"
+        android:text="@string/text_btnCalcular"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_peso" />
+
+<!--bloco dedicado para aparecer o cálculo da equação de quantos ml o usuário deve beber -->
+<!--texto está em negrito, alinhado com as extremidades horizontais, com o elemento de cima e o elemento dos minutos -->
+    <TextView
+        android:id="@+id/txtResultMl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1000,00 ml"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtPontos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalcular"
+        app:layout_constraintVertical_bias="0.226" />
+
+<!--Button do lembrete, que teve a string de texto criado no arquivo strings.xml -->
+<!-- android:backgroundTint="@android:color/holo_blue_light" define a cor de fundo do botão -->
+
+    <Button
+        android:id="@+id/btnLembrete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="124dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:text="@string/txtLembrete"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalcular" />
+
+<!--Button do lembrete, que teve a string de texto criado no arquivo strings.xml -->
+
+    <Button
+        android:id="@+id/btnAlarme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:text="@string/txtAlarme"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalcular" />
+
+    <!--TextView da hora-->
+    <TextView
+        android:id="@+id/txtHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/txtHora"
+        android:textColor="@android:color/black"
+        android:textSize="35sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLembrete" />
+    <!--TextView dois pontos-->
+    <TextView
+        android:id="@+id/txtPontos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/txtPontos"
+        android:textColor="@android:color/black"
+        android:textSize="35sp"
+        app:layout_constraintStart_toEndOf="@id/txtHora"
+        app:layout_constraintTop_toBottomOf="@id/btnLembrete"
+
+        />
+    <!--TextView dos minutos-->
+    <TextView
+        android:id="@+id/txtMinutos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/txtMinutos"
+        android:textColor="@android:color/black"
+        android:textSize="35sp"
+        app:layout_constraintStart_toEndOf="@id/txtPontos"
+        app:layout_constraintTop_toBottomOf="@id/btnLembrete" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+
+<!--
+    Retrato: No modo retrato, a tela será mais alta, não mais larga.
+    LandScape: No modo paisagem, a tela será mais larga, não mais alta .
+    Sensor: Esta orientação será determinada dependendo do sensor do dispositivo.
+    Não Especificado: Para isso, a orientação será escolhida pelo sistema .
+-->
+

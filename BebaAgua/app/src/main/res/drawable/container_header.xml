@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <gradient android:type="linear"
+        android:startColor="@android:color/holo_blue_bright"
+        android:centerColor="@android:color/holo_blue_light"
+        android:endColor="@android:color/holo_blue_dark"
+        android:angle="90"/>
+
+</shape>
+
+<!--    Comecei com uma empty activity para fazer a parte do design (front-end?) do aplicativo,
+        na linha 3, defini que vou trabalhar com um retângulo no topo, e na linha 5 defini que a cor será linear
+        nas linhas de 6 ate 8 defini o tipo de cor do app (usei cores padrao do android)
+        Esse gradiente vai de cima pra baixo na tela (começa azul escuro e termina brilhante no fim da tela)
+-->
+
+
+
+
+
+
+
